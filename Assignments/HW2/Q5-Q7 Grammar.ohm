@@ -1,4 +1,4 @@
-QuestionFive {
+QuestionFiveGrammar {
     Programs = (FunctionDeclaration)* Expression
     FunctionDeclaration = identifier "=" "(" ListOf<Parameter, ","> ")" "=>" Expression
     Parameter = identifier | numericLiteral | StringLiteral
@@ -10,9 +10,9 @@ QuestionFive {
         | numericLiteral
         | StringLiteral
         | identifier
-
     SubExpression = "(" Expression ")"
-    FunctionCall = identifier "(" ListOf<Parameter, ","> ")"
+    FunctionCall = identifier "(" ListOf<Argument, ","> ")"
+    Argument = identifier | numericLiteral | StringLiteral
     Conditional = Expression "?" Expression ":" Expression
     numericLiteral = digit+ ("." digit+)? ("e" digit+)?
     StringLiteral = "\""  (alnum | EscapeChars)* "\""
@@ -27,5 +27,4 @@ QuestionFive {
         | Expression ("%") Expression
     UnaryPrefix = "-" Expression			--negate
     UnaryPostfix = Expression "!"			--factorial
-
 }
