@@ -25,8 +25,6 @@ const inputs = [
   'asdf',
 ]
 
-const userInput = 'Hello'
-
 for (const input of inputs) {
   console.log(input)
   const m = myGrammar.match(input)
