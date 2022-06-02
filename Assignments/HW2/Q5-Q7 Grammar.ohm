@@ -1,0 +1,31 @@
+QuestionFive {
+    Programs = (FunctionDeclaration)* Expression
+    FunctionDeclaration = identifier "=" "(" ListOf<Parameter, ","> ")" "=>" Expression
+    Parameter = identifier | numericLiteral | StringLiteral
+    Expression = BinaryExpression 
+        | FunctionCall
+        | UnaryPrefix
+        | UnaryPostfix
+        | SubExpression
+        | numericLiteral
+        | StringLiteral
+        | identifier
+
+    SubExpression = "(" Expression ")"
+    FunctionCall = identifier "(" ListOf<Parameter, ","> ")"
+    Conditional = Expression "?" Expression ":" Expression
+    numericLiteral = digit+ ("." digit+)? ("e" digit+)?
+    StringLiteral = "\""  (alnum | EscapeChars)* "\""
+    EscapeChars = "\\\'" 
+        | "\\\""
+        | "\\n"
+        | "\\\\"
+        | "\\u{" hexDigit hexDigit? hexDigit? hexDigit? hexDigit? hexDigit? "}" 	--unicode
+    identifier = (letter | "$") (alnum | "_" | "$")*        --identifier
+    BinaryExpression = Expression ("+"|"-") Expression
+        | Expression ("*"|"/") Expression
+        | Expression ("%") Expression
+    UnaryPrefix = "-" Expression			--negate
+    UnaryPostfix = Expression "!"			--factorial
+
+}
