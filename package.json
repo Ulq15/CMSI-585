@@ -1,0 +1,12 @@
+{
+  "name": "CMSI-585",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Ulq15/CMSI-585.git",
+  "author": "Masao Kitamura <masaok@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "ohm-js": "^16.3.4"
+  }
+}
