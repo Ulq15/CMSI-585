@@ -1,7 +1,7 @@
 QuestionFiveGrammar {
     Programs = (FunctionDeclaration)* Expression
     FunctionDeclaration = identifier "=" "(" ListOf<Parameter, ","> ")" "=>" Expression
-    Parameter = identifier | numericLiteral | StringLiteral
+    Parameter = identifier
     Expression = BinaryExpression 
         | FunctionCall
         | UnaryPrefix
